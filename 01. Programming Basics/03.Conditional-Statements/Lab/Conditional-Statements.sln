@@ -3,19 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28902.138
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Excellent Result", "01. Excellent Result\01. Excellent Result.csproj", "{E38F12CC-EAF0-48D6-A547-A6239627547B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Excellent Result", "01. Excellent Result\01. Excellent Result.csproj", "{E38F12CC-EAF0-48D6-A547-A6239627547B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Even or Odd", "02. Even or Odd\02. Even or Odd.csproj", "{E5C260AD-3DE0-4A8C-86D6-37F1494F8A50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Even or Odd", "02. Even or Odd\02. Even or Odd.csproj", "{E5C260AD-3DE0-4A8C-86D6-37F1494F8A50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Number 1to9 to Text", "03. Number 1to9 to Text\03. Number 1to9 to Text.csproj", "{398E50EC-8856-45CB-B84D-D938EEAAC511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Number 1to9 to Text", "03. Number 1to9 to Text\03. Number 1to9 to Text.csproj", "{398E50EC-8856-45CB-B84D-D938EEAAC511}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Day of Week", "04. Day of Week\04. Day of Week.csproj", "{6EBE2128-797A-405A-8E0C-77D5699AF304}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Day of Week", "04. Day of Week\04. Day of Week.csproj", "{6EBE2128-797A-405A-8E0C-77D5699AF304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Animal Type", "05. Animal Type\05. Animal Type.csproj", "{FDAE0213-B18C-47B8-A2FD-E5308483A8DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. Animal Type", "05. Animal Type\05. Animal Type.csproj", "{FDAE0213-B18C-47B8-A2FD-E5308483A8DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Area of Figures", "06. Area of Figures\06. Area of Figures.csproj", "{165616CF-BEBC-4A52-A379-EE641114A67B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06. Area of Figures", "06. Area of Figures\06. Area of Figures.csproj", "{165616CF-BEBC-4A52-A379-EE641114A67B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. 3 Equal Numbers", "07. 3 Equal Numbers\07. 3 Equal Numbers.csproj", "{73FDCFC3-896E-49C0-9645-12A6C193D24E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07. 3 Equal Numbers", "07. 3 Equal Numbers\07. 3 Equal Numbers.csproj", "{73FDCFC3-896E-49C0-9645-12A6C193D24E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Address by gender and age", "08. Address by gender and age\08. Address by gender and age.csproj", "{462FB727-23B5-4777-8AD2-FC1E201A549E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. Point in rectangle", "09. Point in rectangle\09. Point in rectangle.csproj", "{66D17AAA-49FE-4CEF-8C8E-AFDD823411D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. Neighborhood shop", "10. Neighborhood shop\10. Neighborhood shop.csproj", "{8A22B18A-3813-464E-A0DA-D26C985D96D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. Fruit or Vegetable", "11. Fruit or Vegetable\11. Fruit or Vegetable.csproj", "{CA1FB113-AF01-4533-8779-AF656B30C283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. Invalid number", "12. Invalid number\12. Invalid number.csproj", "{F9AB506A-FC9B-4816-95CE-EE6D22F63881}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +61,26 @@ Global
 		{73FDCFC3-896E-49C0-9645-12A6C193D24E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73FDCFC3-896E-49C0-9645-12A6C193D24E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73FDCFC3-896E-49C0-9645-12A6C193D24E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462FB727-23B5-4777-8AD2-FC1E201A549E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462FB727-23B5-4777-8AD2-FC1E201A549E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462FB727-23B5-4777-8AD2-FC1E201A549E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462FB727-23B5-4777-8AD2-FC1E201A549E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D17AAA-49FE-4CEF-8C8E-AFDD823411D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D17AAA-49FE-4CEF-8C8E-AFDD823411D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D17AAA-49FE-4CEF-8C8E-AFDD823411D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D17AAA-49FE-4CEF-8C8E-AFDD823411D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A22B18A-3813-464E-A0DA-D26C985D96D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A22B18A-3813-464E-A0DA-D26C985D96D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A22B18A-3813-464E-A0DA-D26C985D96D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A22B18A-3813-464E-A0DA-D26C985D96D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1FB113-AF01-4533-8779-AF656B30C283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1FB113-AF01-4533-8779-AF656B30C283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1FB113-AF01-4533-8779-AF656B30C283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1FB113-AF01-4533-8779-AF656B30C283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9AB506A-FC9B-4816-95CE-EE6D22F63881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9AB506A-FC9B-4816-95CE-EE6D22F63881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9AB506A-FC9B-4816-95CE-EE6D22F63881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9AB506A-FC9B-4816-95CE-EE6D22F63881}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
