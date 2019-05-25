@@ -1,211 +1,89 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
-namespace _10._Radioactive_Mutant
+public class RadioactiveBunnies
 {
-    class Program
+    public static void Main()
     {
-        static void Main(string[] args)
+        var dimensions = Console.ReadLine().Split();
+        int rows = int.Parse(dimensions[0]);
+        int cols = int.Parse(dimensions[1]);
+        var bunnyLair = new char[rows][];
+        int playerRow = 0;
+        int playerCol = 0;
+
+        for (int i = 0; i < rows; i++)
         {
-            int[] size = Console.ReadLine()
-                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
-                .Select(int.Parse)
-                .ToArray();
-
-            var lair = new char[size[0], size[1]];
-            int playerRow = 0;
-            int playerCol = 0;
-
-            for (int row = 0; row < lair.GetLength(0); row++)
+            bunnyLair[i] = Console.ReadLine().ToCharArray();
+            if (bunnyLair[i].Contains('P'))
             {
-                var input = Console.ReadLine();
-                for (int col = 0; col < lair.GetLength(1); col++)
-                {
-                    lair[row, col] = input[col];
-                    if (input[col] == 'P')
-                    {
-                        playerCol = col;
-                        playerRow = row;
-                    }
-                }
-            }
-            var commands = new Queue<char>(Console.ReadLine().ToCharArray());
-            bool dead = false;
-            bool win = false;
-
-            while (commands.Count != 0)
-            {
-                char command = commands.Dequeue();
-                if (command == 'L' && dead != true)
-                {
-                    if (playerCol == 0)
-                    {
-                        win = true;
-                        lair[playerRow, playerCol] = '.';
-                    }
-                    else if (lair[playerRow, playerCol - 1] == '.')
-                    {
-                        lair[playerRow, playerCol - 1] = 'P';
-                        lair[playerRow, playerCol] = '.';
-                        playerCol -= 1;
-                    }
-                    else if (lair[playerRow, playerCol - 1] == 'B')
-                    {
-                        dead = true;
-                        lair[playerRow, playerCol] = '.';
-                        playerCol -= 1;
-                    }
-                }
-                else if (command == 'R' && dead != true)
-                {
-                    if (playerCol == lair.GetLength(1) - 1)
-                    {
-                        win = true;
-                        lair[playerRow, playerCol] = '.';
-                    }
-
-                    else if (lair[playerRow, playerCol + 1] == '.')
-                    {
-                        lair[playerRow, playerCol + 1] = 'P';
-                        lair[playerRow, playerCol] = '.';
-                        playerCol += 1;
-                    }
-                    else if (lair[playerRow, playerCol + 1] == 'B')
-                    {
-                        dead = true;
-                        lair[playerRow, playerCol] = '.';
-                        playerCol += 1;
-                    }
-                }
-                else if (command == 'U' && dead != true)
-                {
-                    if (playerRow == 0)
-                    {
-                        win = true;
-                        lair[playerRow, playerCol] = '.';
-                    }
-
-                    else if (lair[playerRow - 1, playerCol] == '.')
-                    {
-                        lair[playerRow - 1, playerCol] = 'P';
-                        lair[playerRow, playerCol] = '.';
-                        playerRow -= 1;
-                    }
-                    else if (lair[playerRow - 1, playerCol] == 'B')
-                    {
-                        dead = true;
-                        lair[playerRow, playerCol] = '.';
-                        playerRow -= 1;
-                    }
-                }
-                else if (command == 'D' && dead != true)
-                {
-                    if (playerRow == lair.GetLength(0) - 1)
-                    {
-                        win = true;
-                        lair[playerRow, playerCol] = '.';
-                    }
-                    else if (lair[playerRow + 1, playerCol] == '.')
-                    {
-                        lair[playerRow + 1, playerCol] = 'P';
-                        lair[playerRow, playerCol] = '.';
-                        playerRow += 1;
-                    }
-                    else if (lair[playerRow + 1, playerCol] == 'B')
-                    {
-                        dead = true;
-                        lair[playerRow, playerCol] = '.';
-                        playerRow += 1;
-                    }
-                }
-
-                for (int row = 0; row < lair.GetLength(0); row++)
-                {
-                    for (int col = 0; col < lair.GetLength(1); col++)
-                    {
-                        if (lair[row, col] == 'B')
-                        {
-                            if (IsInside(lair, row, col - 1))
-                            {
-                                if (lair[row, col - 1] == 'P')
-                                {
-                                    dead = true;
-                                }
-                                lair[row, col - 1] = 'C';
-                            }
-                            if (IsInside(lair, row, col + 1))
-                            {
-                                if (lair[row, col + 1] == 'P')
-                                {
-                                    dead = true;
-                                }
-                                lair[row, col + 1] = 'C';
-                            }
-
-                            if (IsInside(lair, row - 1, col))
-                            {
-                                if (lair[row - 1, col] == 'P')
-                                {
-                                    dead = true;
-                                }
-                                lair[row - 1, col] = 'C';
-                            }
-
-                            if (IsInside(lair, row + 1, col))
-                            {
-                                if (lair[row + 1, col] == 'P')
-                                {
-                                    dead = true;
-                                }
-                                lair[row + 1, col] = 'C';
-                            }
-                        }
-                    }
-
-                }
-                for (int row = 0; row < lair.GetLength(0); row++)
-                {
-                    for (int col = 0; col < lair.GetLength(1); col++)
-                    {
-                        if (lair[row, col] == 'C')
-                        {
-                            lair[row, col] = 'B';
-                        }
-                    }
-                }
-                if (dead)
-                {
-                    Print(lair);
-                    Console.WriteLine($"dead: {playerRow} {playerCol}");
-                   return;
-                }
-                else if (win)
-                {
-                    Print(lair);
-                    Console.WriteLine($"won: {playerRow} {playerCol}");
-                    return;
-                }
+                playerRow = i;
+                playerCol = Array.IndexOf(bunnyLair[i], 'P');
+                bunnyLair[playerRow][playerCol] = '.';
             }
         }
+        string directions = Console.ReadLine();
 
-        private static void Print(char[,] lair)
+        foreach (char move in directions)
         {
-            for (int i = 0; i < lair.GetLength(0); i++)
+            int oldPlayerRow = playerRow;
+            int oldPlayerCol = playerCol;
+            switch (move)
             {
-                for (int j = 0; j < lair.GetLength(1); j++)
-                {
-                    Console.Write(lair[i, j]);
-                }
-                Console.WriteLine();
+                case 'U': playerRow--; break;
+                case 'D': playerRow++; break;
+                case 'L': playerCol--; break;
+                case 'R': playerCol++; break;
             }
-        }
 
-        private static bool IsInside(char[,] lair, int row, int col)
-        {
-            return row >= 0 && row < lair.GetLength(0)
-                 && col >= 0 && col < lair.GetLength(1);
+            bunnyLair = SpreadBunnies(bunnyLair, rows - 1, cols - 1);
+
+            if (playerRow < 0 || playerRow >= rows ||
+                playerCol < 0 || playerCol >= cols)
+            {
+                PrintResult(bunnyLair, oldPlayerRow, oldPlayerCol, "won");
+                return;
+            }
+
+            if (bunnyLair[playerRow][playerCol] == 'B')
+            {
+                PrintResult(bunnyLair, playerRow, playerCol, "dead");
+                return;
+            }
         }
     }
 
+    private static char[][] SpreadBunnies(char[][] matrix, int rows, int cols)
+    {
+        var newLair = new char[matrix.Length][];
+        for (int i = 0; i < matrix.Length; i++)
+        {
+            newLair[i] = (char[])matrix[i].Clone();
+        }
+
+        for (int row = 0; row <= rows; row++)
+        {
+            for (int col = 0; col <= cols; col++)
+            {
+                if (matrix[row][col] == 'B')
+                {
+                    if (row > 0) newLair[row - 1][col] = 'B';
+                    if (row < rows) newLair[row + 1][col] = 'B';
+                    if (col > 0) newLair[row][col - 1] = 'B';
+                    if (col < cols) newLair[row][col + 1] = 'B';
+                }
+            }
+        }
+
+        return newLair;
+    }
+
+    private static void PrintResult(char[][] bunnyLair, int row, int col, string outcome)
+    {
+        foreach (var bunnyRow in bunnyLair)
+        {
+            Console.WriteLine(string.Join("", bunnyRow));
+        }
+        Console.WriteLine("{0}: {1} {2}", outcome, row, col);
+    }
 }
