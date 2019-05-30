@@ -20,10 +20,7 @@ namespace _08._Ranking
                 string contestsName = tokens[0];
                 string pass = tokens[1];
 
-                if (!contests.ContainsKey(contestsName))
-                {
                     contests.Add(contestsName, pass);
-                }
             }
             while ((input = Console.ReadLine()) != "end of submissions")
             {
