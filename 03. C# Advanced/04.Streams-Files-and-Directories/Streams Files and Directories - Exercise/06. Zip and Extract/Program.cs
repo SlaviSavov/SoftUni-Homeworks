@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.IO.Compression;
 
 namespace _06._Zip_and_Extract
 {
@@ -6,7 +8,13 @@ namespace _06._Zip_and_Extract
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string file = "copyMe.png";
+            string targetPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"/zipPic.zip";
+
+            using (var archive=ZipFile.Open(targetPath,ZipArchiveMode.Create))
+            {
+                archive.CreateEntryFromFile(file, Path.GetFileName(file));
+            }
         }
     }
 }
