@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace _03._Count_Uppercase_Words
 {
@@ -6,7 +7,14 @@ namespace _03._Count_Uppercase_Words
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var word = Console.ReadLine()
+                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                .Where(w => Char.IsUpper(w[0]));
+
+            foreach (var item in word)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
