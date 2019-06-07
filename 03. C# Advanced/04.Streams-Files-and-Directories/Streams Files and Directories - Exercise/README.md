@@ -1,11 +1,6 @@
-﻿﻿# Exercise: Streams, Files and Directories 
-  
-  
-  
-  
+﻿# Exercises: Streams, Files and Directories 
 Problems for exercises and homework for the  [&quot;CSharp Advanced&quot; course @ Software University](https://softuni.bg/courses/csharp-advanced).
 #
-
 **01.Even Lines**
 
 Write a program that reads a text file and prints on the console its even lines. Line numbers start from 0. Use StreamReader. Before you print the result replace {"-", ",", ".", "!", "?"} with "@" and reverse the order of the words.
