@@ -2,7 +2,7 @@
 
 namespace _07._Raw_Data
 {
-    class Program
+     public class StartUp
     {
         static void Main(string[] args)
         {
