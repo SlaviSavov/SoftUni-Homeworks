@@ -28,7 +28,7 @@ namespace _06._Speed_Racing
 
             var command = string.Empty;
 
-            while ((command=Console.ReadLine())!="End")
+            while ((command = Console.ReadLine()) != "End")
             {
                 var token = command
                     .Split()
@@ -36,13 +36,10 @@ namespace _06._Speed_Racing
                 var carModel = token[1];
                 var distance = double.Parse(token[2]);
 
-                foreach (var item in carList)
-                {
-                    if (item.Model==carModel)
-                    {
-                        item.Drive(distance);
-                    }
-                }
+
+                Car car = carList.FirstOrDefault(c => c.Model == carModel);
+
+                car.Drive(distance);
             }
 
             foreach (var item in carList)
