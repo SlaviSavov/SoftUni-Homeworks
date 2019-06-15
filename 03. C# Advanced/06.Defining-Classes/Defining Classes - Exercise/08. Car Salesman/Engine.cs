@@ -19,7 +19,19 @@ namespace _08._Car_Salesman
             Displacement = displacement;
             Efficiency = efficiency;
         }
+        public override string ToString()
+        {
+            var result = $"  {Model}:"
+            + Environment.NewLine
+            + $"    Power: {Power}"
+            + Environment.NewLine
+            + $"    Displacement: {Displacement}"
+            + Environment.NewLine
+            + $"    Efficiency: {Efficiency}"
+            + Environment.NewLine;
 
+            return result;
+        }
 
 
     }

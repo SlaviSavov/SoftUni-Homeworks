@@ -28,6 +28,7 @@ namespace _08._Car_Salesman
                 var engine = new Engine(engineName, power, displacement, efficiency);
                 engineList.Add(engine);
             }
+
             int m = int.Parse(Console.ReadLine());
             for (int i = 0; i < m; i++)
             {
@@ -35,29 +36,45 @@ namespace _08._Car_Salesman
                     .Split()
                     .ToArray();
                 string model = input[0];
-                string engine = input[1];
+                Engine engine = engineList.FirstOrDefault(e => e.Model == input[1]);
                 string weight = "n/a";
                 string color = "n/a";
-                if (input.Length == 4)
+                if (input.Length > 2)
                 {
-                    weight = input[2];
-                   color = input[3];
-                }
-                else if (input.Length==3)
-                {
+                    int tempWeight=0;
+                    var isDigit = int.TryParse(input[2], out tempWeight);
 
-                    weight = input[2];
+
+                    if (!isDigit)
+                    {
+                        color = input[2];
+                    }
+
+                    if (input.Length > 3)
+                    {
+                        if (isDigit)
+                        {
+                            tempWeight = int.Parse(input[2]);
+                            color = input[3];
+                        }
+                    }
+                    if (tempWeight == 0)
+                    {
+                        weight = "n/a";
+                    }
+                    else
+                    {
+                        weight = $"{weight}";
+                    }
                 }
                 var car = new Car(model, engine, weight, color);
                 carList.Add(car);
             }
 
 
-
             foreach (var item in carList)
             {
-                Engine eng = engineList.Where(e => e.Model == item.Engine);
-                Console.WriteLine();
+                Console.WriteLine(item.ToString());
             }
         }
     }
