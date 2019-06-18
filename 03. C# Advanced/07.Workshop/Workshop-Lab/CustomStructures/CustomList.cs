@@ -7,7 +7,7 @@ namespace CustomStructures
     /// <summary>
     /// Integer List
     /// </summary>
-    public class CustomList
+    public class CustomList<T>
     {
         /// <summary>
         /// Default size of internal array
@@ -17,7 +17,7 @@ namespace CustomStructures
         /// <summary>
         /// Internal array
         /// </summary>
-        private int[] innerArr;
+        private T[] innerArr;
 
         /// <summary>
         /// Number of elements in the list
@@ -29,7 +29,7 @@ namespace CustomStructures
         /// </summary>
         public CustomList()
         {
-            innerArr = new int[defaultSize];
+            innerArr = new T[defaultSize];
         }
 
         /// <summary>
@@ -38,10 +38,10 @@ namespace CustomStructures
         /// <param name="initialSize">Initial size of the list</param>
         public CustomList(int initialSize)
         {
-            innerArr = new int[initialSize];
+            innerArr = new T[initialSize];
         }
 
-        public int this[int index]
+        public T this[int index]
         {
             get
             {
@@ -56,7 +56,7 @@ namespace CustomStructures
         }
 
 
-        public void Add(int element)
+        public void Add(T element)
         {
             if (innerArr.Length == Count)
             {
@@ -66,7 +66,7 @@ namespace CustomStructures
             Count++;
         }
 
-        public void AddRange(int[] list)
+        public void AddRange(T[] list)
         {
             if (list.Length + Count >= innerArr.Length)
             {
@@ -99,7 +99,7 @@ namespace CustomStructures
         }
 
 
-        public void InsertAt(int index, int element)
+        public void InsertAt(int index, T element)
         {
             CheckIndexRange(index);
             ShiftRight(index);
@@ -107,16 +107,16 @@ namespace CustomStructures
             Count++;
         }
 
-        public bool Contains(int element)
+        public bool Contains(T element)
         {
             bool result = false;
             for (int i = 0; i < Count; i++)
             {
-                if (innerArr[i] == element)
-                {
-                    result = true;
-                    break;
-                }
+                //if (innerArr[i] == element)
+                //{
+                //    result = true;
+                //    break;
+                //}
             }
             return result;
         }
@@ -125,7 +125,7 @@ namespace CustomStructures
         {
             CheckIndexRange(firstIndex);
             CheckIndexRange(secondIndex);
-            int tempElement = innerArr[firstIndex];
+            T tempElement = innerArr[firstIndex];
             innerArr[firstIndex] = innerArr[secondIndex];
             innerArr[secondIndex] = tempElement;
         }
@@ -134,7 +134,7 @@ namespace CustomStructures
         {
             if (innerArr.Length / 4 > Count)
             {
-                var tempArr = new int[innerArr.Length / 2];
+                var tempArr = new T[innerArr.Length / 2];
 
                 for (int i = 0; i < Count; i++)
                 {
@@ -144,7 +144,7 @@ namespace CustomStructures
             }
         }
 
-        public void ForEach(Action<int> action)
+        public void ForEach(Action<T> action)
         {
             for (int i = 0; i < Count; i++)
             {
@@ -158,7 +158,7 @@ namespace CustomStructures
         }
         private void Grow(int newSize)
         {
-            int[] tempArr = new int[newSize];
+            T[] tempArr = new T[newSize];
 
             innerArr.CopyTo(tempArr, 0);
             innerArr = tempArr;
