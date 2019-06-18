@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CustomStructures
 {
-    public class CustomStack
+    public class CustomStack<T>
     {
         /// <summary>
         /// Default size of internal array
@@ -14,7 +14,7 @@ namespace CustomStructures
         /// <summary>
         /// Internal array
         /// </summary>
-        private int[] innerArr;
+        private T[] innerArr;
 
         /// <summary>
         /// Number of elements in the stack
@@ -23,10 +23,10 @@ namespace CustomStructures
 
         public CustomStack()
         {
-            innerArr = new int[defaultSize];
+            innerArr = new T[defaultSize];
         }
 
-        public void Push(int element)
+        public void Push(T element)
         {
             if (innerArr.Length == Count)
             {
@@ -35,23 +35,23 @@ namespace CustomStructures
             innerArr[Count] = element;
             Count++;
         }
-        public int Peek()
+        public T Peek()
         {
             CheckIfEmpty();
             return innerArr[Count - 1];
         }
 
 
-        public int Pop()
+        public T Pop()
         {
             CheckIfEmpty();
             Count--;
-            int tempElement = innerArr[Count];
+            T tempElement = innerArr[Count];
             innerArr[Count] = default;
             return tempElement;
         }
 
-        public void ForEach(Action<int>action)
+        public void ForEach(Action<T>action)
         {
             for (int i = Count-1; i < 0; i--)
             {
@@ -63,7 +63,7 @@ namespace CustomStructures
         #region private
         private void Grow()
         {
-            int[] tempArr = new int[innerArr.Length * 2];
+            T[] tempArr = new T[innerArr.Length * 2];
 
             innerArr.CopyTo(tempArr, 0);
             innerArr = tempArr;
