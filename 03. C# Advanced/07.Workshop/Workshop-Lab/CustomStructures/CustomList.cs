@@ -7,7 +7,7 @@ namespace CustomStructures
     /// <summary>
     /// Integer List
     /// </summary>
-    public class CustomList<T>
+    public class CustomList<T> where T : IComparable
     {
         /// <summary>
         /// Default size of internal array
@@ -112,11 +112,11 @@ namespace CustomStructures
             bool result = false;
             for (int i = 0; i < Count; i++)
             {
-                //if (innerArr[i] == element)
-                //{
-                //    result = true;
-                //    break;
-                //}
+                if (innerArr[i].Equals(element))
+                {
+                    result = true;
+                    break;
+                }
             }
             return result;
         }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CustomStructures
 {
-    public class CustomStack<T>
+    public class CustomStack<T> 
     {
         /// <summary>
         /// Default size of internal array
