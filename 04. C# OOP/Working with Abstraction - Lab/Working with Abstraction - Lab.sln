@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1. Rhombus of Stars", "1. R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointInRectangle", "PointInRectangle\PointInRectangle.csproj", "{ED677B35-A525-4972-B82E-E93007E88FB4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_StudentSystem", "P03_StudentSystem\P03_StudentSystem.csproj", "{F1B3CE13-1D41-43E7-96FC-1CF4B54D41C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel Reservation", "Hotel Reservation\Hotel Reservation.csproj", "{CE272381-B9E0-4664-8998-F863F3A146B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{ED677B35-A525-4972-B82E-E93007E88FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED677B35-A525-4972-B82E-E93007E88FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED677B35-A525-4972-B82E-E93007E88FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B3CE13-1D41-43E7-96FC-1CF4B54D41C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B3CE13-1D41-43E7-96FC-1CF4B54D41C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B3CE13-1D41-43E7-96FC-1CF4B54D41C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B3CE13-1D41-43E7-96FC-1CF4B54D41C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE272381-B9E0-4664-8998-F863F3A146B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE272381-B9E0-4664-8998-F863F3A146B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE272381-B9E0-4664-8998-F863F3A146B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE272381-B9E0-4664-8998-F863F3A146B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
