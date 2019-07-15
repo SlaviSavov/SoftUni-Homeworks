@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_AnimalFarm", "P02_Anima
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_ShoppingSpree", "P03_ShoppingSpree\P03_ShoppingSpree.csproj", "{D0932187-B6CE-4DAC-93BB-9BB878E32B14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05_FootballTeamGenerator", "P05_FootballTeamGenerator\P05_FootballTeamGenerator.csproj", "{23B230BD-117C-472D-B586-8FC4518EB4CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D0932187-B6CE-4DAC-93BB-9BB878E32B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0932187-B6CE-4DAC-93BB-9BB878E32B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0932187-B6CE-4DAC-93BB-9BB878E32B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B230BD-117C-472D-B586-8FC4518EB4CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B230BD-117C-472D-B586-8FC4518EB4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B230BD-117C-472D-B586-8FC4518EB4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B230BD-117C-472D-B586-8FC4518EB4CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
