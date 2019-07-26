@@ -24,11 +24,18 @@ namespace Logger.Models.Appenders
         public void Append(IError error)
         {
             string formattedMessage = this.File
-                .Write(this.Layout, error);
+                .Write(this.Layout, error)+Environment.NewLine;
 
             System.IO.File.AppendAllText(this.File.Path,
                 formattedMessage);
             this.messagesAppended++;
         }
+
+        public override string ToString()
+        {
+            return $"Appender type: {this.GetType().Name }, Layout type: {this.Layout.GetType().Name}," +
+                $" Report level: {this.Level.ToString()}, Messages appended: {this.messagesAppended}, File size: {this.File.Size}";
+        }
+
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Logger.Models.Layouts
 {
-    public class XMLLayout : ILayout
+    public class XmlLayout : ILayout
     {
         public string Format => GetForamt();
 
